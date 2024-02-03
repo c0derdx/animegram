@@ -162,6 +162,7 @@ export const useDeletePost = () => {
 
   return useMutation({
     mutationFn: ({ postId, imageId }: { postId: string; imageId: string }) =>
+    // @ts-ignore
       deletePost(postId, imageId),
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -175,6 +176,7 @@ export const useGetPosts = () => {
   return useInfiniteQuery({
     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
     queryFn: getInfinitePosts,
+    //@ts-ignore
     getNextPageParam: (lastPage) => {
       if (lastPage && lastPage.documents.length === 0) return null
 
