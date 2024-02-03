@@ -60,9 +60,9 @@ const SavedPostCard = ({ post }: SavedPostCardProps) => {
         />
       </Link>
 
-      {/* <PostStats
+      <PostStats
         post={post}
-        userId={user.id} /> */}
+        userId={user.id} />
     </div>
   )
 }
